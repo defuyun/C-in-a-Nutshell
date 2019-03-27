@@ -3,17 +3,29 @@ using System.Text;
 
 namespace C__7._0_in_a_Nutshell
 {
+
+    class Rectangle {
+        int number;
+
+        public int Number {
+            get {
+                System.Console.WriteLine("Enter getter");
+                return number;
+            }
+
+            set {
+                System.Console.WriteLine("Enter setter");
+                number = value;
+            }
+        }
+    }
     class Program
     {
-        static void Foo(ref StringBuilder fooSB) {
-            fooSB.Append("texture");
-            fooSB = null;
-        }
         static void Main(string[] args)
         {
-            var sb = new StringBuilder();
-            Foo(ref sb);
-            System.Console.WriteLine(sb);
+            Rectangle rect = new Rectangle();
+            rect.Number = 10;
+            rect.Number -= 3;
         }
     }
 }
